@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Newsreader, JetBrains_Mono } from "next/font/google";
+import { AppShell } from "@/components/layout";
 import "./globals.css";
 
 const sans = localFont({
@@ -57,7 +58,7 @@ export default function RootLayout({
       <body
         className={`${sans.variable} ${serif.variable} ${mono.variable} antialiased`}
       >
-        {children}
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );
