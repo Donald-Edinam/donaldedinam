@@ -4,6 +4,7 @@ import { Newsreader, JetBrains_Mono } from "next/font/google";
 import { AppShell } from "@/components/layout";
 import { ThemeProvider } from "@/components/theme";
 import { ThemeScript } from "./theme-script";
+import { Analytics } from "@/components/analytics";
 import "./globals.css";
 
 const sans = localFont({
@@ -46,6 +47,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://donaldedinam.com"),
   title: {
     template: "%s | Donald Edinam",
     default: "Donald Edinam — Frontend Engineer",
@@ -67,6 +69,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <ThemeScript />
+        <Analytics />
       </head>
       <body
         className={`${sans.variable} ${serif.variable} ${mono.variable} antialiased`}

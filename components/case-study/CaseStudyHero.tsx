@@ -1,4 +1,7 @@
+"use client";
+
 import { Container } from "@/components/layout";
+import { motion } from "framer-motion";
 
 interface CaseStudyHeroProps {
     title: string;
@@ -11,23 +14,28 @@ interface CaseStudyHeroProps {
 
 export function CaseStudyHero({ title, tagline, meta }: CaseStudyHeroProps) {
     return (
-        <section className="bg-bg-secondary border-b border-border-subtle pt-24 pb-16 mb-12">
+        <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="bg-bg-secondary border-b border-border-subtle pt-24 pb-16 mb-12"
+        >
             <Container size="content">
                 <div className="max-w-3xl mx-auto text-center">
-                    <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+                    <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-text-primary">
                         {title}
                     </h1>
-                    <p className="text-xl text-text-muted mb-8 leading-relaxed">
+                    <p className="text-xl text-text-muted mb-8 leading-relaxed max-w-2xl mx-auto">
                         {tagline}
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-text-muted font-medium">
-                        <span>{meta.role}</span>
+                        <span><span className="text-accent opacity-80 mr-2">Role:</span>{meta.role}</span>
                         <span className="text-border-subtle px-2">|</span>
-                        <span>{meta.timeline}</span>
+                        <span><span className="text-accent opacity-80 mr-2">Timeline:</span>{meta.timeline}</span>
                     </div>
                 </div>
             </Container>
-        </section>
+        </motion.section>
     );
 }

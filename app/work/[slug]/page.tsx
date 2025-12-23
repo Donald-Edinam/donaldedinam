@@ -77,6 +77,30 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     </CaseStudySection>
                 </div>
 
+                {/* Optional Visuals */}
+                {project.visuals && project.visuals.length > 0 && (
+                    <section className="py-16 md:py-24 border-b border-border-subtle">
+                        <div className="grid gap-12">
+                            {project.visuals.map((visual, idx) => (
+                                <figure key={idx} className="space-y-4">
+                                    <div className="bg-bg-secondary rounded-lg overflow-hidden border border-border-subtle shadow-sm hover:shadow-md transition-shadow">
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                        <img
+                                            src={visual.src}
+                                            alt={visual.alt}
+                                            className="w-full h-auto"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    <figcaption className="text-sm text-center text-text-muted italic">
+                                        Image {idx + 1}: {visual.alt}
+                                    </figcaption>
+                                </figure>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
                 <CaseStudyNavigation currentSlug={project.slug} projects={projects} />
             </Container>
         </article>
