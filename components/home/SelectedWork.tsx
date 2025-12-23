@@ -4,23 +4,17 @@ const projects = [
     {
         id: 1,
         title: "Design System for SaaS Platform",
-        problem: "Inconsistent UI across 50+ screens, slow feature development",
-        responsibility: "Led design system architecture, component library, documentation",
-        impact: "Reduced development time by 40%, improved consistency across product",
+        description: "A component library and design system for a growing SaaS product with 50+ screens and multiple teams. My role focused on frontend architecture, interface clarity, and building components that scale without friction.",
     },
     {
         id: 2,
         title: "Developer Tools Dashboard",
-        problem: "Complex data visualization, performance issues with large datasets",
-        responsibility: "Frontend architecture, data layer optimization, component design",
-        impact: "Improved load time by 60%, supported 10x data volume",
+        description: "A data-intensive dashboard for engineering teams, handling complex visualizations and large datasets. My role focused on frontend architecture, performance optimization, and creating interfaces that prioritize clarity over decoration.",
     },
     {
         id: 3,
         title: "E-commerce Platform Rebuild",
-        problem: "Legacy codebase, poor mobile experience, low conversion",
-        responsibility: "Frontend lead, responsive design, checkout flow optimization",
-        impact: "Increased mobile conversion by 35%, reduced cart abandonment",
+        description: "A complete frontend rebuild of a legacy e-commerce platform, with emphasis on mobile experience and conversion optimization. My role focused on frontend architecture, responsive design, and building a system that could evolve without constant refactoring.",
     },
 ];
 
@@ -28,16 +22,19 @@ export function SelectedWork() {
     return (
         <section className="section">
             <Container size="content">
-                <h2 className="text-2xl font-bold mb-8">Selected Work</h2>
+                <div className="mb-8">
+                    <h2 className="text-2xl font-bold mb-3">Selected work</h2>
+                    <p className="text-text-muted leading-relaxed">
+                        A small set of projects that reflect how I think, not just what I can ship.
+                    </p>
+                </div>
                 <div className="space-y-12">
                     {projects.map((project) => (
                         <article key={project.id} className="space-y-3">
                             <h3 className="text-xl font-bold">{project.title}</h3>
-                            <div className="space-y-2 text-text-muted">
-                                <p><span className="font-medium text-text-primary">Problem:</span> {project.problem}</p>
-                                <p><span className="font-medium text-text-primary">Role:</span> {project.responsibility}</p>
-                                <p><span className="font-medium text-text-primary">Impact:</span> {project.impact}</p>
-                            </div>
+                            <p className="text-text-muted leading-relaxed">
+                                {project.description}
+                            </p>
                         </article>
                     ))}
                 </div>

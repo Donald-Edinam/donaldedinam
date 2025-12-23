@@ -4,12 +4,17 @@ export function Positioning() {
     return (
         <section className="section-sm bg-bg-secondary">
             <Container size="content">
-                <h2 className="text-2xl font-bold mb-6">Experience</h2>
-                <ul className="space-y-2 text-text-muted">
-                    <li>5+ years building production systems</li>
-                    <li>Platforms, design systems, developer tools</li>
-                    <li>Frontend architecture and scalability</li>
-                </ul>
+                <div className="space-y-6 text-text-muted leading-relaxed">
+                    <p>
+                        I work at the intersection of frontend engineering, design systems, and product thinking.
+                    </p>
+                    <p>
+                        My experience spans real-world platforms — from internal tools to customer-facing products — where clarity, performance, and maintainability matter more than novelty.
+                    </p>
+                    <p>
+                        I care deeply about how software is structured, not just how it looks.
+                    </p>
+                </div>
             </Container>
         </section>
     );

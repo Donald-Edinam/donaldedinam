@@ -46,8 +46,16 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Donald Edinam — Frontend Engineer",
-  description: "A frontend engineer who treats interfaces as systems, not screens.",
+  title: {
+    template: "%s | Donald Edinam",
+    default: "Donald Edinam — Frontend Engineer",
+  },
+  description: "A frontend engineer who treats interfaces as systems, not screens. Focused on design systems, architecture, and longevity.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Donald Edinam",
+  },
 };
 
 export default function RootLayout({

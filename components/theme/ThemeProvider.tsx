@@ -19,6 +19,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         const stored = localStorage.getItem('theme') as Theme | null;
 
         if (stored) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setThemeState(stored);
             document.documentElement.classList.remove('focus', 'precision');
             if (stored === 'precision') {
