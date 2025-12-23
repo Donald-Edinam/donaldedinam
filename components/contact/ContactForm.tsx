@@ -9,11 +9,30 @@ export function ContactForm() {
         e.preventDefault();
         setStatus("submitting");
 
-        // Simulate network delay
-        await new Promise((resolve) => setTimeout(resolve, 1500));
+        try {
+            const formData = new FormData(e.currentTarget);
+            const data = {
+                name: formData.get("name"),
+                email: formData.get("email"),
+                message: formData.get("message"),
+                _gotcha: formData.get("_gotcha"),
+            };
 
-        setStatus("success");
-        // In a real app, we would send data to an API route here
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) throw new Error("Failed to send message");
+
+            setStatus("success");
+        } catch (error) {
+            console.error(error);
+            setStatus("error");
+        }
     }
 
     if (status === "success") {
@@ -28,6 +47,23 @@ export function ContactForm() {
                     className="text-sm font-medium hover:text-accent transition-colors underline decoration-border-subtle underline-offset-4"
                 >
                     Send another message
+                </button>
+            </div>
+        );
+    }
+
+    if (status === "error") {
+        return (
+            <div className="bg-bg-secondary p-8 rounded-lg border border-red-500/20 text-center animate-in fade-in duration-300">
+                <h3 className="text-xl font-bold mb-2 text-red-500">Something went wrong</h3>
+                <p className="text-text-muted mb-6">
+                    Failed to send message. Please try again or email directly.
+                </p>
+                <button
+                    onClick={() => setStatus("idle")}
+                    className="text-sm font-medium hover:text-accent transition-colors underline decoration-border-subtle underline-offset-4"
+                >
+                    Try again
                 </button>
             </div>
         );
@@ -48,6 +84,15 @@ export function ContactForm() {
                     placeholder="your name"
                 />
             </div>
+
+            {/* Honeypot field - keeping it hidden */}
+            <input
+                type="text"
+                name="_gotcha"
+                style={{ display: "none" }}
+                tabIndex={-1}
+                autoComplete="off"
+            />
 
             <div>
                 <label htmlFor="email" className="block text-sm font-bold text-text-muted mb-2">

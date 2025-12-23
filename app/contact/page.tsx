@@ -25,7 +25,7 @@ export default function ContactPage() {
 
                 <section className="mt-16 pt-8 border-t border-border-subtle text-text-muted text-sm">
                     <p>
-                        Prefer email? You can reach me directly at <a href="mailto:hello@example.com" className="hover:text-accent transition-colors underline decoration-border-subtle underline-offset-4">hello@example.com</a>.
+                        Prefer email? You can reach me directly at <a href="mailto:edinam4000@gmail.com" className="hover:text-accent transition-colors underline decoration-border-subtle underline-offset-4">edinam4000@gmail.com</a>.
                     </p>
                 </section>
             </Container>
