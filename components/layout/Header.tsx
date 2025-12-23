@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ThemeToggle } from "@/components/theme";
 
 export function Header() {
     return (
@@ -11,7 +12,7 @@ export function Header() {
                     </Link>
 
                     {/* Primary Navigation */}
-                    <nav>
+                    <nav aria-label="Primary navigation">
                         <ul className="flex gap-8">
                             <li>
                                 <Link href="/work" className="hover:text-accent transition-colors">
@@ -31,8 +32,8 @@ export function Header() {
                         </ul>
                     </nav>
 
-                    {/* Theme Toggle Placeholder */}
-                    <div className="w-10 h-10 border border-border-subtle rounded" aria-label="Theme toggle (coming soon)" />
+                    {/* Theme Toggle */}
+                    <ThemeToggle />
                 </div>
             </div>
         </header>

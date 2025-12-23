@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Newsreader, JetBrains_Mono } from "next/font/google";
 import { AppShell } from "@/components/layout";
+import { ThemeProvider } from "@/components/theme";
+import { ThemeScript } from "./theme-script";
 import "./globals.css";
 
 const sans = localFont({
@@ -55,10 +57,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <ThemeScript />
+      </head>
       <body
         className={`${sans.variable} ${serif.variable} ${mono.variable} antialiased`}
       >
-        <AppShell>{children}</AppShell>
+        <ThemeProvider>
+          <AppShell>{children}</AppShell>
+        </ThemeProvider>
       </body>
     </html>
   );
