@@ -9,101 +9,79 @@ export interface Project {
         stack: string[];
     };
     content: {
-        problem: string;      // "Problem & Context"
-        role: string;         // "My Role & Constraints"
-        approach: string;     // "Approach & Process"
-        solutions: string;    // "Solutions / Decisions"
-        outcomes: string;     // "Outcomes / Learnings"
-        reflection: string;   // "Reflection / Implications" 
+        problem: string;
+        role: string;
+        approach: string;
+        solutions: string;
+        outcomes: string;
+        reflection: string;
     };
     visuals?: {
         src: string;
         alt: string;
     }[];
+    liveUrl?: string;
 }
 
 export const projects: Project[] = [
     {
         id: "1",
-        slug: "internal-logistics-platform",
-        title: "Internal Logistics Platform",
-        tagline: "Streamlining daily sales tracking across multiple shops.",
+        slug: "buzzba",
+        title: "Buzzba",
+        tagline: "Comprehensive barbershop management system.",
+        liveUrl: "https://www.buzzba.com",
         meta: {
-            role: "Frontend Architect",
+            role: "Fullstack Developer",
             timeline: "2024",
-            stack: ["React", "Dashboard Components", "Visualization Libs"],
+            stack: ["Next.js", "Express.js", "PostgreSQL"],
         },
         content: {
-            problem: `The client needed a way to see real-time sales across three shops without relying on manual spreadsheets. Existing solutions were either too rigid or expensive for a small business setup. 
-      
-The core challenge was allowing non-technical staff to interact with the system reliably while providing clear visualization data for performance comparison.`,
-
-            role: `I was solely responsible for the frontend architecture. My role involved designing the dashboard, building reusable input forms, and integrating visualization components.
-
-Constraints:
-• Backend endpoints were fixed; no database redesign allowed.
-• Must support desktop and tablet usage for managers on the move.
-• System must remain easy for non-technical staff to avoid data entry errors.`,
-
-            approach: `I started by mapping the workflow of shop employees to understand where data entry friction occurred. 
-
-From there, I designed a minimal component system for tables, charts, and input forms. I prioritized creating reusable UI patterns to ensure consistency across different shop interfaces and emphasized accessibility (keyboard flows and focus management) to speed up daily tasks.`,
-
-            solutions: `1. Reusable UI Patterns
-I created a strict set of reusable UI patterns for forms and reporting interfaces. This required higher upfront investment but drastically reduced code duplication and accelerated future shop onboarding.
-
-2. Simplified Colors & Graphs
-To help non-technical staff grasp performance data immediately, I implemented color-coded graphs to indicate trends rather than complex, dense data tables. I sacrificed granularity for readability, ensuring the dashboard could be understood at a glance.`,
-
-            outcomes: `Staff adoption was immediate, making daily sales input routine. The dashboard reduced manual errors and significantly improved decision-making speed.
-
-Metrics:
-• Zero manual errors report in first month
-• Real-time visibility achieved across all locations`,
-
-            reflection: `Even small projects benefit from frontend discipline. Good architecture doesn’t require scale—it requires clear decisions that anticipate change. Simplicity proved to be the ultimate scalability factor here.`
+            problem: `Barbershops often struggle with manual booking, tracking sales, and managing staff schedules efficiently. The client needed a unified platform to handle these operations without the complexity of enterprise ERPs.`,
+            role: `I designed and built the entire application, utilizing Next.js for the frontend and Express.js for the backend API.`,
+            approach: `I focused on creating distinct user flows for barbers (schedule management), admins (business oversight), and customers (booking). Database schema design was critical to ensure relational integrity between appointments, staff, and sales data.`,
+            solutions: `Implemented a robust booking engine that prevents double-bookings. Built a sales tracking dashboard that visualizes revenue trends.`,
+            outcomes: `The system successfully centralized operations, allowing for real-time schedule management and accurate sales reporting.`,
+            reflection: `Building a full-stack CRUD application emphasized the importance of type safety and API contract definition between frontend and backend.`
         }
     },
     {
         id: "2",
-        slug: "remote-it-jobs-platform",
-        title: "Remote IT Jobs Platform",
-        tagline: "Connecting job seekers to global remote IT opportunities.",
+        slug: "medfinder",
+        title: "MedFinder",
+        tagline: "Location-based healthcare facility discovery.",
+        liveUrl: "https://medfinder-two.vercel.app/",
         meta: {
-            role: "Frontend Lead",
-            timeline: "2023",
-            stack: ["React Query", "URL State", "Responsive Design"],
+            role: "Frontend Developer",
+            timeline: "2024",
+            stack: ["React.js", "Geolocation API", "Google Maps"],
         },
         content: {
-            problem: `Existing job boards were cluttered, difficult to filter, and not tailored to entry-level engineers. The goal was to simplify the job search experience while maintaining the speed and depth required for a data-heavy application.
-
-Constraints Included:
-• Fast data fetching required for thousands of jobs.
-• Filters needed to be intuitive and persistent.`,
-
-            role: `I led the frontend architecture, developing search and filtering components and designing the responsive card-based listings.
-
-Constraints:
-• Backend API had pre-defined endpoints; limited ability to modify data structure.
-• System must support global traffic with minimal load time.`,
-
-            approach: `Mapped user journeys for multiple personas (fresh graduates vs experienced remote seekers). 
-
-I developed reusable components (JobCard, FilterBar, Pagination) and prioritized accessibility with semantic HTML and focus visibility. State persistence was a key focus to ensure users could share exact search configurations.`,
-
-            solutions: `1. URL-Driven State
-I implemented persistent state using URL search parameters. This added routing complexity compared to local state but enabled deep-linking and easier sharing—critical for a job board.
-
-2. Optimized Data Fetching (React Query)
-To handle thousands of jobs without bogging down the client, I utilized React Query for caching, optimistic updates, and lazy fetching. This abstraction was essential for maintaining a responsive UI under load.`,
-
-            outcomes: `The launch reduced friction for job seekers, receiving positive feedback on clarity.
-
-Metrics:
-• Fast load times even with filtered queries
-• High engagement with filter features`,
-
-            reflection: `Every frontend decision influences user trust and efficiency. A clear interface paired with predictable behavior turns a job board from a chaotic list into a reliable tool. Performance and clarity drive engagement more than flashy visuals.`
+            problem: `Finding specialized healthcare facilities in Ghana can be difficult due to fragmented information. Users needed a reliable way to locate nearby clinics based on specific service needs.`,
+            role: `I developed the frontend interface and integrated mapping services to provide location-based results.`,
+            approach: `Leveraged the Geolocation API to detect user position and filtered facility data by distance. Implemented a responsive map interface that works seamlessly on mobile devices.`,
+            solutions: `Developed an intuitive search filter allowing users to sort by distance, service type, or facility name.`,
+            outcomes: `The app processed over 2,000 location-based queries in its first month, validating the demand for accessible healthcare information.`,
+            reflection: `Working with maps taught me the importance of handling location permission states and optimizing marker rendering for performance.`
+        }
+    },
+    {
+        id: "3",
+        slug: "domainudge",
+        title: "Domainudge",
+        tagline: "AI-powered business name and domain generator.",
+        liveUrl: "https://domainudge.com/",
+        meta: {
+            role: "Frontend Developer",
+            timeline: "2024",
+            stack: ["React.js", "Zustand", "AI Integration"],
+        },
+        content: {
+            problem: `Entrepreneurs often get stuck in the ideation phase when naming their business. They needed a tool to brainstorm unique names and immediately check domain availability.`,
+            role: `I built the client-side logic and state management using Zustand, ensuring a snappy, reactive experience.`,
+            approach: `Focused on performance optimization to ensure the app felt instant. Integrated domain availability APIs to provide real-time feedback.`,
+            solutions: `Achieved 99.9% uptime on checks and reduced average check time by 1.5 seconds through optimized API calls.`,
+            outcomes: `Achieved a Google Lighthouse Performance score of 95+, providing a smooth user experience.`,
+            reflection: `State management libraries like Zustand offer a great balance between simplicity and power for apps with complex interactive flows.`
         }
     }
 ];

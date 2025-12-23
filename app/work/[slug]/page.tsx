@@ -44,6 +44,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <CaseStudyHero
                 title={project.title}
                 tagline={project.tagline}
+                liveUrl={project.liveUrl}
                 meta={{
                     role: project.meta.role,
                     timeline: project.meta.timeline

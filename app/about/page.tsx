@@ -1,6 +1,6 @@
 import { Container } from "@/components/layout";
 import { Timeline, StackList } from "@/components/about";
-import { principles, experience, stack } from "@/data/about";
+import { principles, experience, education, certifications, stack } from "@/data/about";
 
 import { Metadata } from "next";
 
@@ -48,6 +48,40 @@ export default function AboutPage() {
                 <section className="mb-20">
                     <h2 className="text-2xl font-bold mb-8">Path</h2>
                     <Timeline roles={experience} />
+                </section>
+
+                {/* Education */}
+                <section className="mb-20">
+                    <h2 className="text-2xl font-bold mb-8">Education</h2>
+                    <div className="space-y-6">
+                        {education.map((edu) => (
+                            <div key={edu.degree} className="flex flex-col md:flex-row md:justify-between md:items-baseline border-b border-border-subtle pb-6 last:border-none last:pb-0">
+                                <div>
+                                    <h3 className="text-lg font-bold text-text-primary">{edu.school}</h3>
+                                    <p className="text-text-muted mt-1">{edu.degree}</p>
+                                </div>
+                                <span className="text-sm text-text-muted font-medium mt-2 md:mt-0 bg-bg-secondary px-3 py-1 rounded-full border border-border-subtle">
+                                    {edu.period}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Certifications */}
+                <section className="mb-20">
+                    <h2 className="text-2xl font-bold mb-8">Certifications</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {certifications.map((cert) => (
+                            <div key={cert.name} className="bg-bg-secondary p-6 rounded-lg border border-border-subtle hover:border-accent transition-colors">
+                                <h3 className="text-lg font-bold text-text-primary mb-1">{cert.name}</h3>
+                                <p className="text-sm text-accent mb-3">{cert.organization}</p>
+                                <p className="text-text-muted text-sm leading-relaxed">
+                                    {cert.description}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
                 </section>
 
                 {/* Stack */}
