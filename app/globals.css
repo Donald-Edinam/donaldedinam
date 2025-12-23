@@ -18,42 +18,50 @@
 
 /* =================================
    THEME: FOCUS (DEFAULT)
+   Graphic / Warm Amber
    ================================= */
 
 :root {
   /* Surfaces */
-  --bg-primary: 15 17 19;
-  --bg-secondary: 22 25 29;
+  --bg-primary: 30 30 30;
+  /* #1E1E1E Graphite */
+  --bg-secondary: 35 35 35;
+  /* Slightly lighter graphite */
 
   /* Text */
   --text-primary: 242 242 240;
-  --text-muted: 181 183 176;
+  --text-muted: 156 163 175;
 
   /* Accent */
-  --accent-primary: 230 182 92;
-  --accent-muted: 201 162 79;
+  --accent-primary: 255 179 71;
+  /* #FFB347 Warm Amber */
+  --accent-muted: 204 143 57;
 
   /* UI */
-  --border-subtle: 38 42 46;
-  --focus-ring: 230 182 92;
+  --border-subtle: 45 45 45;
+  --focus-ring: 255 179 71;
 }
 
 /* =================================
    THEME: PRECISION
+   Architectural Black / Electric Blue
    ================================= */
 
 .theme-precision {
-  --bg-primary: 10 12 16;
-  --bg-secondary: 18 21 27;
+  --bg-primary: 17 17 17;
+  /* #111111 Deep Black */
+  --bg-secondary: 26 26 26;
+  /* #1A1A1A */
 
   --text-primary: 245 247 250;
   --text-muted: 156 166 182;
 
-  --accent-primary: 59 130 246;
-  --accent-muted: 37 99 235;
+  --accent-primary: 0 122 255;
+  /* #007AFF Electric Blue */
+  --accent-muted: 0 85 179;
 
   --border-subtle: 31 36 48;
-  --focus-ring: 59 130 246;
+  --focus-ring: 0 122 255;
 }
 
 /* =================================
