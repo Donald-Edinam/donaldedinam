@@ -1,5 +1,12 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+export const runtime = 'edge';
+
+// Initialize Resend safely (allows build to pass without key)
+const resend = process.env.RESEND_API_KEY
+    ? new Resend(process.env.RESEND_API_KEY)
+    : null;
 
 export async function POST(req: Request) {
     try {
@@ -18,16 +25,16 @@ export async function POST(req: Request) {
             );
         }
 
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: process.env.GMAIL_USER,
-                pass: process.env.GMAIL_APP_PASSWORD,
-            },
-        });
+        if (!resend) {
+            console.error('Missing RESEND_API_KEY');
+            return NextResponse.json(
+                { error: 'Server configuration error' },
+                { status: 500 }
+            );
+        }
 
-        const mailOptions = {
-            from: process.env.GMAIL_USER,
+        await resend.emails.send({
+            from: 'Portfolio Contact <onboarding@resend.dev>', // Update this to your verified domain later
             to: 'edinam4000@gmail.com',
             replyTo: email,
             subject: `Portfolio Contact: ${name}`,
@@ -46,9 +53,7 @@ ${message}
 <p><strong>Message:</strong></p>
 <p>${message.replace(/\n/g, '<br>')}</p>
             `,
-        };
-
-        await transporter.sendMail(mailOptions);
+        });
 
         return NextResponse.json({ success: true });
     } catch (error) {

@@ -29,6 +29,21 @@ export default function AboutPage() {
                     </div>
                 </header>
 
+                {/* Profile Image */}
+                <section className="mb-20 flex justify-center">
+                    <div className="relative group">
+                        <div className="w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-lg overflow-hidden border-2 border-border-subtle group-hover:border-accent transition-colors duration-300">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="/profile.jpg"
+                                alt="Donald Edinam"
+                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                            />
+                        </div>
+                        <div className="absolute -bottom-4 -right-4 w-14 h-14 md:w-16 md:h-16 bg-accent rounded-full border-4 border-bg-primary" aria-hidden="true" />
+                    </div>
+                </section>
+
                 {/* Principles */}
                 <section className="mb-20">
                     <h2 className="text-2xl font-bold mb-8">How I Work</h2>
