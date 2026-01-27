@@ -1,12 +1,8 @@
 import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import { sendEmail } from '@/lib/email';
 
-export const runtime = 'edge';
+// Note: Using Node.js runtime (not Edge) because Nodemailer requires Node.js APIs
 
-// Initialize Resend safely (allows build to pass without key)
-const resend = process.env.RESEND_API_KEY
-    ? new Resend(process.env.RESEND_API_KEY)
-    : null;
 
 export async function POST(req: Request) {
     try {
@@ -25,16 +21,19 @@ export async function POST(req: Request) {
             );
         }
 
-        if (!resend) {
-            console.error('Missing RESEND_API_KEY');
+        // Check if email credentials are configured
+        const hasGmailConfig = process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD;
+        const hasSmtpConfig = process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS;
+
+        if (!hasGmailConfig && !hasSmtpConfig) {
+            console.error('Missing email configuration');
             return NextResponse.json(
                 { error: 'Server configuration error' },
                 { status: 500 }
             );
         }
 
-        await resend.emails.send({
-            from: 'Portfolio Contact <onboarding@resend.dev>', // Update this to your verified domain later
+        await sendEmail({
             to: 'edinam4000@gmail.com',
             replyTo: email,
             subject: `Portfolio Contact: ${name}`,
@@ -64,3 +63,4 @@ ${message}
         );
     }
 }
+
