@@ -155,6 +155,8 @@ donaldedinam/
 ├── lib/                  # Utilities
 │   └── email.ts          # Email service (Nodemailer)
 ├── public/               # Static assets
+│   ├── fonts/            # Custom fonts (Satoshi)
+│   └── images/           # Images (avatar, etc.)
 ├── .env.example          # Environment variables template
 ├── PROJECT_CONTEXT.md    # Design & technical philosophy
 └── README.md             # This file

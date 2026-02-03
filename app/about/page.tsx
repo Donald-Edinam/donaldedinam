@@ -35,7 +35,7 @@ export default function AboutPage() {
                         <div className="w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-lg overflow-hidden border-2 border-border-subtle group-hover:border-accent transition-colors duration-300">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
-                                src="/profile.jpg"
+                                src="/images/avatar.png"
                                 alt="Donald Edinam"
                                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                             />
