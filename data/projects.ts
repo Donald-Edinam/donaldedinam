@@ -26,8 +26,8 @@ export interface Project {
 export const projects: Project[] = [
     {
         id: "1",
-        slug: "buzzba",
-        title: "Buzzba",
+        slug: "buzzba-core",
+        title: "Buzzba Core",
         tagline: "Comprehensive barbershop management system.",
         liveUrl: "https://www.buzzba.com",
         meta: {
@@ -46,22 +46,22 @@ export const projects: Project[] = [
     },
     {
         id: "2",
-        slug: "medfinder",
-        title: "MedFinder",
-        tagline: "Location-based healthcare facility discovery.",
-        liveUrl: "https://medfinder-two.vercel.app/",
+        slug: "breeze",
+        title: "Buzzba Breeze",
+        tagline: "All-in-one operating system for laundry and dry cleaning businesses.",
+        liveUrl: "https://breeze.buzzba.com",
         meta: {
-            role: "Frontend Developer",
-            timeline: "2024",
-            stack: ["React.js", "Geolocation API", "Google Maps"],
+            role: "Fullstack Developer",
+            timeline: "2025",
+            stack: ["Next.js", "TypeScript", "PostgreSQL"],
         },
         content: {
-            problem: `Finding specialized healthcare facilities in Ghana can be difficult due to fragmented information. Users needed a reliable way to locate nearby clinics based on specific service needs.`,
-            role: `I developed the frontend interface and integrated mapping services to provide location-based results.`,
-            approach: `Leveraged the Geolocation API to detect user position and filtered facility data by distance. Implemented a responsive map interface that works seamlessly on mobile devices.`,
-            solutions: `Developed an intuitive search filter allowing users to sort by distance, service type, or facility name.`,
-            outcomes: `The app processed over 2,000 location-based queries in its first month, validating the demand for accessible healthcare information.`,
-            reflection: `Working with maps taught me the importance of handling location permission states and optimizing marker rendering for performance.`
+            problem: `Laundry and dry cleaning businesses in emerging markets run on notebooks, verbal tracking, and guesswork. Owners had no visibility into operations, staff had no structured workflows, and customers had no way to check their order status without calling — creating noise on both ends.`,
+            role: `I designed and built Breeze end-to-end — from the multi-tenant workspace model to the customer-facing order tracking interface.`,
+            approach: `Modeled the product as a vertical operating system rather than a point solution. The core insight was that customers don't need accounts — a 6-character token gives them self-serve visibility into their order, eliminating inbound inquiry noise without adding friction.`,
+            solutions: `Built a real-time order tracking system with tokenized customer access, a staff management layer for processing workflows, and automated status updates that keep customers informed throughout the garment lifecycle.`,
+            outcomes: `Replaced manual tracking entirely for onboarded businesses, reducing customer inquiry volume and giving owners real-time operational visibility for the first time.`,
+            reflection: `Building for non-technical users in emerging markets sharpened my thinking on progressive complexity — the interface has to be immediately legible to someone who has never used software, while still being powerful enough for daily business operations.`
         }
     },
     {
