@@ -44,6 +44,24 @@ export const principles: Principle[] = [
 
 export const experience: Role[] = [
     {
+        company: "Thinking About Thinking",
+        title: "Community Ambassador",
+        period: "Mar 2026 — Present",
+        description: "Selected as a 2026 Ambassador for a nonprofit exploring AI, neuroscience, mathematics, and the nature of intelligence. Contributing to community engagement and responsible AI discussions, with direct involvement in the AE Global Summit on Open Problems for AI — London, November 2026."
+    },
+    {
+        company: "The Hue Factory",
+        title: "Frontend Engineer",
+        period: "Feb 2026 — Present",
+        description: "Building production-ready web interfaces for client brands at a full-service creative agency. Translate brand identities and design systems into responsive, cross-device experiences across industries including logistics, e-commerce, and events."
+    },
+    {
+        company: "Claude Builder Club @ UG",
+        title: "Technical Lead",
+        period: "Jan 2026 — Present",
+        description: "Lead technical education and AI adoption for the club, organizing workshops, live demos, and sessions that drive practical AI literacy among members. Produced tutorials and guides on responsible AI use while advising the executive team on innovative use cases and ethical AI practices."
+    },
+    {
         company: "Ubuntu Africa",
         title: "Frontend Engineer",
         period: "July 2025 — Present",

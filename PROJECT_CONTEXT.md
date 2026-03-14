@@ -5,7 +5,7 @@
 This project is a personal portfolio for a frontend-focused software engineer operating at a global, senior-adjacent level.
 
 It is not a résumé.
-It is not a template.
+It is not a template. 
 It is a product.
 
 The site must communicate clarity of thought, taste, and technical depth through restraint rather than volume.
