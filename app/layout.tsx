@@ -47,7 +47,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://donaldedinam.com"),
+  metadataBase: new URL("https://donaldedinam.me"),
   title: {
     template: "%s | Donald Edinam",
     default: "Donald Edinam — Frontend Engineer",
