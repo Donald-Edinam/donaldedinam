@@ -59,6 +59,20 @@ export function BoringInterfaceIllustration() {
 
     return (
         <div className="my-10 p-6 border border-border-subtle rounded-xl bg-bg-secondary space-y-6">
+            <style dangerouslySetInnerHTML={{ __html: `
+                @keyframes loading-progress {
+                    0% { transform: scaleX(0); }
+                    100% { transform: scaleX(1); }
+                }
+                @keyframes spin-square {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+                @keyframes pulse-bar {
+                    0%, 100% { opacity: 0.3; transform: scaleY(0.7); }
+                    50% { opacity: 1; transform: scaleY(1.3); }
+                }
+            `}} />
             <div className="flex flex-col gap-2">
                 <h3 className="text-lg font-bold text-text-primary">Interactive Demo: The "Cleverness" Tax</h3>
                 <p className="text-sm text-text-muted">
@@ -129,8 +143,11 @@ export function BoringInterfaceIllustration() {
                             >
                                 {obviousState === "loading" ? (
                                     <>
-                                        <div className="w-3 h-3 border-2 border-gray-400 border-t-transparent rounded-full animate-spin" />
-                                        Submitting...
+                                        Submitting
+                                        <div 
+                                            className="absolute bottom-0 left-0 right-0 h-0.5 bg-text-primary origin-left"
+                                            style={{ animation: "loading-progress 300ms linear forwards" }}
+                                        />
                                     </>
                                 ) : (
                                     "Submit Action"
@@ -165,8 +182,17 @@ export function BoringInterfaceIllustration() {
                         )}
 
                         {cleverState === "loading" && cleverStep === 0 && (
-                            <div className="flex flex-col items-center gap-2 p-3 bg-gray-900 border border-border-subtle rounded text-xs text-text-muted">
-                                <div className="w-6 h-6 border-2 border-[#ffb347] border-t-transparent rounded-full animate-spin" />
+                            <div className="flex flex-col items-center justify-center gap-3 p-4 bg-gray-900 border border-border-subtle rounded text-xs text-text-muted min-h-24">
+                                <div className="relative w-7 h-7 flex items-center justify-center">
+                                    <div 
+                                        className="absolute inset-0 border border-[#ffb347]"
+                                        style={{ animation: "spin-square 1.5s linear infinite" }}
+                                    />
+                                    <div 
+                                        className="absolute w-3.5 h-3.5 border border-[#ffb347]"
+                                        style={{ animation: "spin-square 2.5s linear infinite reverse" }}
+                                    />
+                                </div>
                                 <span className="text-[10px] font-mono">Calibrating UX delight coefficients...</span>
                             </div>
                         )}
@@ -203,8 +229,12 @@ export function BoringInterfaceIllustration() {
                         )}
 
                         {cleverState === "loading" && cleverStep === 2 && (
-                            <div className="flex flex-col items-center gap-2 p-3 bg-gray-900 border border-border-subtle rounded text-xs text-text-muted">
-                                <div className="w-6 h-6 border-2 border-text-primary border-t-transparent rounded-full animate-bounce" />
+                            <div className="flex flex-col items-center justify-center gap-3 p-4 bg-gray-900 border border-border-subtle rounded text-xs text-text-muted min-h-24">
+                                <div className="flex gap-1 items-center h-4">
+                                    <div className="w-1 h-3 bg-text-primary rounded-sm" style={{ animation: "pulse-bar 0.8s ease-in-out infinite" }} />
+                                    <div className="w-1 h-3 bg-text-primary rounded-sm" style={{ animation: "pulse-bar 0.8s ease-in-out infinite 0.15s" }} />
+                                    <div className="w-1 h-3 bg-text-primary rounded-sm" style={{ animation: "pulse-bar 0.8s ease-in-out infinite 0.3s" }} />
+                                </div>
                                 <span className="text-[10px]">Processing signature tokens...</span>
                             </div>
                         )}
