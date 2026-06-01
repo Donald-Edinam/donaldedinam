@@ -1,19 +1,34 @@
 "use client";
 
 import Link from "next/link";
-import { ThemeToggle } from "@/components/theme";
-import { useState } from "react";
+import { ThemeToggle, useTheme } from "@/components/theme";
+import { useEffect, useState } from "react";
 
 export function Header() {
+    const { theme } = useTheme();
+    const [mounted, setMounted] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const logoSrc = mounted && theme === "precision" ? "/images/logo-blue.png" : "/images/logo-amber.png";
 
     return (
         <header className="border-b border-border-subtle">
             <div className="container-layout">
                 <div className="flex items-center justify-between py-6">
                     {/* Logo/Name */}
-                    <Link href="/" className="text-lg font-medium hover:text-accent transition-colors">
-                        Donald Edinam
+                    <Link href="/" className="flex items-center gap-2 text-lg font-medium hover:text-accent transition-colors group">
+                        <img
+                            src={logoSrc}
+                            alt="DE Logo"
+                            width={32}
+                            height={20}
+                            className="h-5 w-auto object-contain transition-transform group-hover:scale-105"
+                        />
+                        <span>Donald Edinam</span>
                     </Link>
 
                     {/* Desktop Navigation */}

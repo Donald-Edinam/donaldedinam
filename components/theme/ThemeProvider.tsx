@@ -36,6 +36,27 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         }
     }, []);
 
+    useEffect(() => {
+        // Update favicon dynamically based on active theme
+        const links = document.querySelectorAll("link[rel*='icon']");
+        const href = theme === 'precision' ? '/images/favicon-blue.png' : '/images/favicon-amber.png';
+
+        if (links.length > 0) {
+            links.forEach(link => {
+                link.setAttribute('href', href);
+                if (href.endsWith('.png')) {
+                    link.setAttribute('type', 'image/png');
+                }
+            });
+        } else {
+            const link = document.createElement('link');
+            link.rel = 'icon';
+            link.type = 'image/png';
+            link.href = href;
+            document.head.appendChild(link);
+        }
+    }, [theme]);
+
     const setTheme = (newTheme: Theme) => {
         setThemeState(newTheme);
         localStorage.setItem('theme', newTheme);
