@@ -30,7 +30,7 @@ export function DesignSystemIllustration() {
                                 onClick={() => setSpacing(s)}
                                 className={`flex-1 py-1.5 text-xs rounded border transition-colors ${
                                     spacing === s
-                                        ? "bg-text-primary text-bg-primary border-transparent font-medium"
+                                        ? "bg-text-primary text-bg border-transparent font-medium"
                                         : "border-border-subtle text-text-muted hover:text-text-primary hover:border-text-muted"
                                 }`}
                             >
@@ -50,7 +50,7 @@ export function DesignSystemIllustration() {
                                 onClick={() => setRadius(r)}
                                 className={`flex-1 py-1.5 text-xs rounded border transition-colors ${
                                     radius === r
-                                        ? "bg-text-primary text-bg-primary border-transparent font-medium"
+                                        ? "bg-text-primary text-bg border-transparent font-medium"
                                         : "border-border-subtle text-text-muted hover:text-text-primary hover:border-text-muted"
                                 }`}
                             >
@@ -70,7 +70,7 @@ export function DesignSystemIllustration() {
                                 onClick={() => setAccentColor(c)}
                                 className={`flex-1 py-1.5 text-xs rounded border capitalize transition-colors ${
                                     accentColor === c
-                                        ? "bg-text-primary text-bg-primary border-transparent font-medium"
+                                        ? "bg-text-primary text-bg border-transparent font-medium"
                                         : "border-border-subtle text-text-muted hover:text-text-primary hover:border-text-muted"
                                 }`}
                             >
