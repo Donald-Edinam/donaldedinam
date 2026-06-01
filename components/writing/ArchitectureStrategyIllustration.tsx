@@ -81,7 +81,7 @@ export function ArchitectureStrategyIllustration() {
                 {isSimulating && mode === "coupled" && (
                     <div className="absolute inset-0 bg-[#e05252]0a border border-[#e05252] animate-pulse flex items-center justify-center pointer-events-none">
                         <div className="bg-[#e05252] text-white px-3 py-1.5 rounded text-xs font-bold uppercase tracking-wider shadow">
-                            Cascade Breakages Detected ⚠️
+                            Cascade Breakages Detected
                         </div>
                     </div>
                 )}
@@ -164,17 +164,17 @@ export function ArchitectureStrategyIllustration() {
                     {pivot !== "none" && !isSimulating && (
                         mode === "layered" ? (
                             <div className="space-y-1">
-                                <div className="text-[#4caf50] font-bold">✓ Pivot Successful (Modular Integration)</div>
-                                <div className="text-text-primary">➔ Scope: Replaced API adapter with GraphQL resolver.</div>
-                                <div className="text-text-primary">➔ UI Component Impact: 0 files modified.</div>
-                                <div className="text-text-primary">➔ Time to Market: 2 hours.</div>
+                                <div className="text-[#4caf50] font-bold">Pivot Successful (Modular Integration)</div>
+                                <div className="text-text-primary">→ Scope: Replaced API adapter with GraphQL resolver.</div>
+                                <div className="text-text-primary">→ UI Component Impact: 0 files modified.</div>
+                                <div className="text-text-primary">→ Time to Market: 2 hours.</div>
                             </div>
                         ) : (
                             <div className="space-y-1">
-                                <div className="text-[#e05252] font-bold">⚠️ Pivot Failed (Regression Risks)</div>
-                                <div className="text-text-primary">➔ Scope: Rewriting UI file to support GraphQL fetch parameters.</div>
-                                <div className="text-text-primary">➔ UI Component Impact: 1 monolithic file completely rewritten.</div>
-                                <div className="text-text-primary">➔ Time to Market: 4 days (required testing regressions).</div>
+                                <div className="text-[#e05252] font-bold">Pivot Failed (Regression Risks)</div>
+                                <div className="text-text-primary">→ Scope: Rewriting UI file to support GraphQL fetch parameters.</div>
+                                <div className="text-text-primary">→ UI Component Impact: 1 monolithic file completely rewritten.</div>
+                                <div className="text-text-primary">→ Time to Market: 4 days (required testing regressions).</div>
                             </div>
                         )
                     )}

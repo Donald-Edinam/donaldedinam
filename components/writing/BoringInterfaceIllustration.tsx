@@ -160,7 +160,7 @@ export function BoringInterfaceIllustration() {
                                 onClick={handleCleverStart}
                                 className="w-full py-2.5 bg-gradient-to-r from-[#ffb347] to-[#ff8c00] text-[#1e1e1e] text-xs font-bold rounded animate-pulse hover:brightness-110 transition-all"
                             >
-                                Initiate Creative Submission 🌟
+                                Initiate Creative Submission
                             </button>
                         )}
 
@@ -212,7 +212,7 @@ export function BoringInterfaceIllustration() {
                         {cleverState === "success" && (
                             <div className="relative p-2 bg-[#ffb347]1a border border-[#ffb347] rounded text-center">
                                 <div className="text-[11px] font-bold text-[#ffb347] mb-1">
-                                    ✨ Processed! Thank you! ✨
+                                    Processed Successfully
                                 </div>
                                 <p className="text-[9px] text-text-muted leading-tight">
                                     Your action finished loading after multiple hops and validations.
