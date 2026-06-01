@@ -138,7 +138,7 @@ export function BoringInterfaceIllustration() {
                                 className={`w-full py-2.5 rounded text-xs font-bold transition-all flex items-center justify-center gap-2 ${
                                     obviousState === "loading"
                                         ? "bg-gray-800 text-gray-400 border border-gray-700 cursor-wait"
-                                        : "bg-text-primary text-bg-primary hover:opacity-90"
+                                        : "bg-text-primary text-bg hover:opacity-90"
                                 }`}
                             >
                                 {obviousState === "loading" ? (
