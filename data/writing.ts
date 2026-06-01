@@ -28,8 +28,8 @@ export const writingEntries: WritingEntry[] = [
         title: 'Design systems are decisions, not components',
         lens: 'Systems',
         readingTime: 5,
-        year: 2024,
-        publishedAt: '2024-05-14',
+        year: 2025,
+        publishedAt: '2025-05-14',
         excerpt: 'Most design systems fail because they focus on components instead of the decisions that create consistency. This explores how to build systems that encode judgment, not just UI.',
         body: {
             context: `Most teams think a design system is a collection of buttons, colors, and components. That understanding is incomplete, and usually the reason their system collapses under scale.
@@ -76,8 +76,8 @@ A good design system lets teams focus on the product, not on negotiating pixels.
         title: 'Interfaces should feel boring, in a good way',
         lens: 'Interfaces',
         readingTime: 4,
-        year: 2024,
-        publishedAt: '2024-08-20',
+        year: 2025,
+        publishedAt: '2025-08-20',
         excerpt: 'The best interfaces disappear. They don\'t demand attention or celebrate themselves. This examines why restraint is a design skill, not a limitation.',
         body: {
             context: `We often celebrate interfaces that feel “clever,” “delightful,” or “creative.” But the interfaces people trust the most rarely feel impressive.
@@ -125,8 +125,8 @@ It’s: “This just works.”`
         title: 'Frontend architecture is product strategy',
         lens: 'Engineering Practice',
         readingTime: 6,
-        year: 2023,
-        publishedAt: '2023-11-05',
+        year: 2026,
+        publishedAt: '2026-03-12',
         excerpt: 'How you structure frontend code determines what features you can build, how fast you can ship, and whether your team can scale. Architecture is not technical debt prevention; it\'s strategic leverage.',
         body: {
             context: `Frontend architecture is often treated as an internal concern, something engineers clean up when there’s time.
