@@ -15,12 +15,17 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     const project = projects.find((p) => p.slug === slug);
 
     if (!project) {
-        return {};
+        return {
+            title: "Not Found",
+        };
     }
 
     return {
         title: project.title,
         description: project.tagline,
+        alternates: {
+            canonical: `/work/${slug}`,
+        },
     };
 }
 
@@ -38,8 +43,24 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         notFound();
     }
 
+    const creativeWorkLd = {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": project.title,
+        "description": project.tagline,
+        "creator": {
+            "@type": "Person",
+            "name": "Donald Edinam",
+            "url": "https://donaldedinam.me"
+        }
+    };
+
     return (
         <article>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkLd) }}
+            />
             {/* Hero Section */}
             <CaseStudyHero
                 title={project.title}
@@ -89,6 +110,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                                         <img
                                             src={visual.src}
                                             alt={visual.alt}
+                                            width={1200}
+                                            height={750}
                                             className="w-full h-auto"
                                             loading="lazy"
                                         />

@@ -47,16 +47,23 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://donaldedinam.me"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? "https://donaldedinam.me"),
   title: {
     template: "%s | Donald Edinam",
     default: "Donald Edinam — Frontend Engineer",
   },
   description: "A frontend engineer who treats interfaces as systems, not screens. Focused on design systems, architecture, and longevity.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "Donald Edinam",
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@0xLynuxx",
   },
 };
 

@@ -7,6 +7,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "About",
     description: "Frontend engineer building for longevity and clarity. Focused on design systems and architecture.",
+    alternates: {
+        canonical: "/about",
+    },
 };
 
 export default function AboutPage() {
@@ -37,6 +40,8 @@ export default function AboutPage() {
                             <img
                                 src="/images/avatar.png"
                                 alt="Donald Edinam"
+                                width={320}
+                                height={320}
                                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                             />
                         </div>

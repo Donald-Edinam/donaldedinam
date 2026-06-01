@@ -7,6 +7,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Selected Work",
     description: "Case studies focused on systems, architecture, and engineering decisions.",
+    alternates: {
+        canonical: "/work",
+    },
 };
 
 export default function WorkPage() {

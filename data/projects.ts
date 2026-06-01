@@ -21,6 +21,7 @@ export interface Project {
         alt: string;
     }[];
     liveUrl?: string;
+    publishedAt: string;
 }
 
 export const projects: Project[] = [
@@ -30,6 +31,7 @@ export const projects: Project[] = [
         title: "Buzzba Core",
         tagline: "Comprehensive barbershop management system.",
         liveUrl: "https://www.buzzba.com",
+        publishedAt: "2024-06-15",
         meta: {
             role: "Fullstack Developer",
             timeline: "2024",
@@ -50,6 +52,7 @@ export const projects: Project[] = [
         title: "Buzzba Breeze",
         tagline: "All-in-one operating system for laundry and dry cleaning businesses.",
         liveUrl: "https://breeze.buzzba.com",
+        publishedAt: "2025-01-10",
         meta: {
             role: "Fullstack Developer",
             timeline: "2025",
@@ -70,6 +73,7 @@ export const projects: Project[] = [
         title: "Domainudge",
         tagline: "AI-powered business name and domain generator.",
         liveUrl: "https://domainudge.com/",
+        publishedAt: "2024-09-01",
         meta: {
             role: "Frontend Developer",
             timeline: "2024",

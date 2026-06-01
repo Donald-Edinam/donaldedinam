@@ -15,12 +15,17 @@ export async function generateMetadata({ params }: WritingPageProps): Promise<Me
     const entry = writingEntries.find((e) => e.slug === slug);
 
     if (!entry) {
-        return {};
+        return {
+            title: "Not Found",
+        };
     }
 
     return {
         title: entry.title,
         description: entry.excerpt,
+        alternates: {
+            canonical: `/writing/${slug}`,
+        },
     };
 }
 
@@ -38,8 +43,25 @@ export default async function WritingEntryPage({ params }: WritingPageProps) {
         notFound();
     }
 
+    const blogLd = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": entry.title,
+        "description": entry.excerpt,
+        "datePublished": entry.publishedAt,
+        "author": {
+            "@type": "Person",
+            "name": "Donald Edinam",
+            "url": "https://donaldedinam.me"
+        }
+    };
+
     return (
         <article className="section">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(blogLd) }}
+            />
             <Container size="prose">
                 <Link href="/writing" className="text-sm text-text-muted hover:text-accent mb-8 inline-block">
                     ← Back to Writing

@@ -7,6 +7,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Writing",
     description: "Notes on frontend systems, interface design, and building software with long-term intent.",
+    alternates: {
+        canonical: "/writing",
+    },
 };
 
 export default function WritingPage() {

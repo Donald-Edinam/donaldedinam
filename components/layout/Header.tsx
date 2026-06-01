@@ -25,6 +25,11 @@ export function Header() {
                                 </Link>
                             </li>
                             <li>
+                                <Link href="/writing" className="hover:text-accent transition-colors">
+                                    Writing
+                                </Link>
+                            </li>
+                            <li>
                                 <Link href="/about" className="hover:text-accent transition-colors">
                                     About
                                 </Link>
@@ -83,6 +88,15 @@ export function Header() {
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 Work
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                href="/writing"
+                                className="block hover:text-accent transition-colors py-2"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Writing
                             </Link>
                         </li>
                         <li>
