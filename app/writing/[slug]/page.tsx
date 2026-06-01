@@ -3,6 +3,15 @@ import { writingEntries } from "@/data/writing";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
+import { DesignSystemIllustration } from "@/components/writing/DesignSystemIllustration";
+import { BoringInterfaceIllustration } from "@/components/writing/BoringInterfaceIllustration";
+import { ArchitectureStrategyIllustration } from "@/components/writing/ArchitectureStrategyIllustration";
+
+const illustrationMap: Record<string, React.ComponentType> = {
+    "design-systems-are-decisions": DesignSystemIllustration,
+    "interfaces-should-feel-boring": BoringInterfaceIllustration,
+    "frontend-architecture-is-product-strategy": ArchitectureStrategyIllustration,
+};
 
 interface WritingPageProps {
     params: Promise<{
@@ -92,6 +101,17 @@ export default async function WritingEntryPage({ params }: WritingPageProps) {
                             {entry.body.coreIdea}
                         </div>
                     </section>
+
+                    {/* Dynamic Concept Illustration */}
+                    {illustrationMap[entry.slug] && (
+                        <section className="space-y-4">
+                            <h2 className="text-xs font-bold uppercase tracking-wider text-text-muted">Visual Concept</h2>
+                            {(() => {
+                                const Illustration = illustrationMap[entry.slug];
+                                return <Illustration />;
+                            })()}
+                        </section>
+                    )}
 
                     {/* Breakdown */}
                     <section className="space-y-6">
