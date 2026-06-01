@@ -8,7 +8,7 @@ export function Hero() {
                     Frontend engineer designing <span className="text-accent">calm, scalable digital systems</span>.
                 </h1>
                 <p className="text-xl text-text-muted leading-relaxed max-w-prose">
-                    I focus on clarity, structure, and longevity — building interfaces that feel inevitable, not improvised.
+                    I focus on clarity, structure, and longevity, building interfaces that feel inevitable, not improvised.
                 </p>
             </Container>
         </section>

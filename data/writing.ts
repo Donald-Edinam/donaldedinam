@@ -32,14 +32,14 @@ export const writingEntries: WritingEntry[] = [
         publishedAt: '2024-05-14',
         excerpt: 'Most design systems fail because they focus on components instead of the decisions that create consistency. This explores how to build systems that encode judgment, not just UI.',
         body: {
-            context: `Most teams think a design system is a collection of buttons, colors, and components. That understanding is incomplete — and usually the reason their system collapses under scale.
+            context: `Most teams think a design system is a collection of buttons, colors, and components. That understanding is incomplete, and usually the reason their system collapses under scale.
 
 A real design system is not what you build. It’s what you decide to stop debating.`,
             coreIdea: `A design system exists to reduce decision fatigue, not to increase consistency for its own sake.
 
 Components are just the visible output. The system itself is the set of constraints, defaults, and tradeoffs agreed upon ahead of time.
 
-When teams argue about spacing, color usage, or component behavior in every new feature, they don’t have a design system — they have a shared folder.`,
+When teams argue about spacing, color usage, or component behavior in every new feature, they don’t have a design system; they have a shared folder.`,
             breakdown: [
                 {
                     content: `Every meaningful system answers questions before they are asked:
@@ -67,13 +67,13 @@ Strong systems:
 Components change. Decisions compound.`,
             closing: `The goal isn’t visual consistency. It’s cognitive relief.
 
-A good design system lets teams focus on the product — not on negotiating pixels.`
+A good design system lets teams focus on the product, not on negotiating pixels.`
         }
     },
     {
         id: '2',
         slug: 'interfaces-should-feel-boring',
-        title: 'Interfaces should feel boring — in a good way',
+        title: 'Interfaces should feel boring, in a good way',
         lens: 'Interfaces',
         readingTime: 4,
         year: 2024,
@@ -93,7 +93,7 @@ When an interface feels boring, it usually means:
 Surprise is expensive. It costs attention.`,
             breakdown: [
                 {
-                    content: `Most interface problems aren’t visual — they’re behavioral.
+                    content: `Most interface problems aren’t visual, they’re behavioral.
 
 Buttons that look interactive but aren’t. Transitions that slow users down. Hidden states that require discovery.
 
@@ -127,14 +127,14 @@ It’s: “This just works.”`
         readingTime: 6,
         year: 2023,
         publishedAt: '2023-11-05',
-        excerpt: 'How you structure frontend code determines what features you can build, how fast you can ship, and whether your team can scale. Architecture is not technical debt prevention — it\'s strategic leverage.',
+        excerpt: 'How you structure frontend code determines what features you can build, how fast you can ship, and whether your team can scale. Architecture is not technical debt prevention; it\'s strategic leverage.',
         body: {
-            context: `Frontend architecture is often treated as an internal concern — something engineers clean up when there’s time.
+            context: `Frontend architecture is often treated as an internal concern, something engineers clean up when there’s time.
 
 In reality, it shapes how fast a product evolves, how confident teams feel shipping changes, and how expensive mistakes become.`,
             coreIdea: `Architecture decisions determine what a product can become.
 
-Not in theory — in practice.
+Not in theory, in practice.
 
 A tightly coupled frontend makes experimentation risky. A clear structure makes iteration cheap.
 
@@ -166,7 +166,7 @@ They’re faster because their systems absorb change gracefully.
 Architecture isn’t about the future you can predict. It’s about the future you can’t.`,
             closing: `Every frontend decision is a bet on how the product will grow.
 
-Make those bets explicit. Your product — and your team — will thank you later.`
+Make those bets explicit. Your product, and your team, will thank you later.`
         }
     }
 ];

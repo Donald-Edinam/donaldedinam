@@ -59,12 +59,12 @@ export const projects: Project[] = [
             stack: ["Next.js", "TypeScript", "PostgreSQL"],
         },
         content: {
-            problem: `Laundry and dry cleaning businesses in emerging markets run on notebooks, verbal tracking, and guesswork. Owners had no visibility into operations, staff had no structured workflows, and customers had no way to check their order status without calling — creating noise on both ends.`,
-            role: `I designed and built Breeze end-to-end — from the multi-tenant workspace model to the customer-facing order tracking interface.`,
-            approach: `Modeled the product as a vertical operating system rather than a point solution. The core insight was that customers don't need accounts — a 6-character token gives them self-serve visibility into their order, eliminating inbound inquiry noise without adding friction.`,
+            problem: `Laundry and dry cleaning businesses in emerging markets run on notebooks, verbal tracking, and guesswork. Owners had no visibility into operations, staff had no structured workflows, and customers had no way to check their order status without calling, creating noise on both ends.`,
+            role: `I designed and built Breeze end-to-end, from the multi-tenant workspace model to the customer-facing order tracking interface.`,
+            approach: `Modeled the product as a vertical operating system rather than a point solution. The core insight was that customers don't need accounts; a 6-character token gives them self-serve visibility into their order, eliminating inbound inquiry noise without adding friction.`,
             solutions: `Built a real-time order tracking system with tokenized customer access, a staff management layer for processing workflows, and automated status updates that keep customers informed throughout the garment lifecycle.`,
             outcomes: `Replaced manual tracking entirely for onboarded businesses, reducing customer inquiry volume and giving owners real-time operational visibility for the first time.`,
-            reflection: `Building for non-technical users in emerging markets sharpened my thinking on progressive complexity — the interface has to be immediately legible to someone who has never used software, while still being powerful enough for daily business operations.`
+            reflection: `Building for non-technical users in emerging markets sharpened my thinking on progressive complexity: the interface has to be immediately legible to someone who has never used software, while still being powerful enough for daily business operations.`
         }
     },
     {

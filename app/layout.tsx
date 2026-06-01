@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? "https://donaldedinam.me"),
   title: {
     template: "%s | Donald Edinam",
-    default: "Donald Edinam — Frontend Engineer",
+    default: "Donald Edinam | Frontend Engineer",
   },
   description: "A frontend engineer who treats interfaces as systems, not screens. Focused on design systems, architecture, and longevity.",
   alternates: {

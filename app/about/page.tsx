@@ -24,7 +24,7 @@ export default function AboutPage() {
                             I am a frontend engineer based in Ghana, working with teams globally to build software that lasts.
                         </p>
                         <p>
-                            My path hasn&apos;t been linear. I started by obsessing over pixels, moved into full-stack complexity, and eventually realized that the hardest problems in software aren&apos;t technical—they&apos;re structural.
+                            My path hasn&apos;t been linear. I started by obsessing over pixels, moved into full-stack complexity, and eventually realized that the hardest problems in software aren&apos;t technical; they&apos;re structural.
                         </p>
                         <p>
                             Today, I focus on the intersection of design systems and engineering architecture. I build interfaces that feel inevitable, not improvised.

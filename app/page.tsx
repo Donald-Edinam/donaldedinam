@@ -9,7 +9,7 @@ import {
 } from "@/components/home";
 
 export const metadata: Metadata = {
-  title: "Donald Edinam — Frontend Engineer",
+  title: "Donald Edinam | Frontend Engineer",
   description: "A frontend engineer who treats interfaces as systems, not screens. Focused on design systems, architecture, and longevity.",
   alternates: {
     canonical: "/",

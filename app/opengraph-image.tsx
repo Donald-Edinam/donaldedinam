@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Donald Edinam — Frontend Engineer';
+export const alt = 'Donald Edinam | Frontend Engineer';
 export const size = {
   width: 1200,
   height: 630,
@@ -94,7 +94,7 @@ export default async function Image() {
               margin: 0,
             }}
           >
-            I focus on clarity, structure, and longevity — building interfaces that feel inevitable, not improvised.
+            I focus on clarity, structure, and longevity, building interfaces that feel inevitable, not improvised.
           </p>
         </div>
 

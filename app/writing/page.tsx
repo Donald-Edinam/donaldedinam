@@ -26,7 +26,7 @@ export default function WritingPage() {
                         Notes on frontend systems, interface design, and building software with long-term intent.
                     </p>
                     <p className="text-sm text-text-muted leading-relaxed">
-                        Written to clarify my own thinking — shared publicly when it feels useful.
+                        Written to clarify my own thinking, shared publicly when it feels useful.
                     </p>
                 </Container>
             </section>
