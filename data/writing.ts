@@ -179,16 +179,16 @@ Make those bets explicit. Your product, and your team, will thank you later.`
         publishedAt: '2026-06-02',
         excerpt: 'Eight weeks of research on digital tools, barbershops, and what it actually takes to build for the people you grew up around.',
         body: {
-            context: `I have spent time working in a barbershop. Not as a designer studying user behavior, not as a researcher collecting field notes. Actually working — managing walk-ins, tracking appointments in my head, watching my uncle run a busy shop with a notebook and a WhatsApp group and nothing else.
+            context: `I have spent time working in a barbershop. Not as a designer studying user behavior, not as a researcher collecting field notes. Actually working, managing walk-ins, tracking appointments in my head, watching my uncle run a busy shop with a notebook and a WhatsApp group and nothing else.
 
 It works. Until it does not.
 
 Customers who have not shown up in two weeks receive no follow-up. Appointments get missed because there is no system to catch them. Revenue gets counted at the end of the day in cash. None of this happens because barbershop owners are not capable. It happens because nobody has built them the right tool.
 
-This is the observation that started Buzzba. And this term, I decided to examine it rigorously — eight weeks of structured academic research on digital tool adoption and customer retention in small service businesses in urban Ghana. I wanted to know if what I was building was actually solving a real problem, or if I had just gotten too close to one person's shop.
+This is the observation that started Buzzba. And this term, I decided to examine it rigorously: eight weeks of structured academic research on digital tool adoption and customer retention in small service businesses in urban Ghana. I wanted to know if what I was building was actually solving a real problem, or if I had just gotten too close to one person's shop.
 
 Here is what I found.`,
-            coreIdea: `The infrastructure is already settled: connectivity and smartphones are everywhere. The real bottleneck is a "utilization gap"—the tools that exist were built for other markets, making them too complex and expensive for how informal service businesses actually work.`,
+            coreIdea: `The infrastructure is already settled: connectivity and smartphones are everywhere. The real bottleneck is a "utilization gap": the tools that exist were built for other markets, making them too complex and expensive for how informal service businesses actually work.`,
             breakdown: [
                 {
                     title: 'The infrastructure argument is settled',
@@ -198,7 +198,7 @@ That is not true.
 
 • GSMA (2024) reports 38.95 mobile connections in Ghana, representing 113% of the population. The number exceeds 100% because many people carry two SIMs.
 
-A barbershop owner in Accra almost certainly has a smartphone. Almost certainly uses WhatsApp. Almost certainly has mobile data. The hardware and connectivity prerequisite for digital tool adoption is not just present — it exceeds population size.
+A barbershop owner in Accra almost certainly has a smartphone. Almost certainly uses WhatsApp. Almost certainly has mobile data. The hardware and connectivity prerequisite for digital tool adoption is not just present, it exceeds population size.
 
 So the question is not whether the infrastructure exists. It does. The question is: why is adoption still not happening?`
                 },
@@ -214,11 +214,11 @@ The tools that exist were built for different businesses in different markets. T
                 },
                 {
                     title: 'Davis had the right theory. The context changes the weight.',
-                    content: `In 1989, Fred Davis published a paper that introduced the Technology Acceptance Model — the idea that people adopt technology primarily based on two things: whether they believe it will help them do their job better, and whether they believe it will be easy to use.
+                    content: `In 1989, Fred Davis published a paper that introduced the Technology Acceptance Model: the idea that people adopt technology primarily based on two things: whether they believe it will help them do their job better, and whether they believe it will be easy to use.
 
 The model has been cited thousands of times. It captures something true about human behavior.
 
-But it was developed in a Western corporate context. Whether it accurately predicts the adoption decisions of a barbershop owner in Accra — operating under different resource constraints, different cultural norms, different expectations of what technology should do for him — is a genuinely open question.
+But it was developed in a Western corporate context. Whether it accurately predicts the adoption decisions of a barbershop owner in Accra (operating under different resource constraints, different cultural norms, different expectations of what technology should do for him) is a genuinely open question.
 
 My reading of the research suggests the core constructs hold. Perceived usefulness matters. But ease of use probably matters even more in a low digital-literacy environment than it did in Davis's original experiments. A tool that is hard to learn will be abandoned before it ever demonstrates its usefulness. The ease-of-use barrier is higher here. Which means tool design has to work harder.`
                 },
@@ -228,7 +228,7 @@ My reading of the research suggests the core constructs hold. Perceived usefulne
 
 Poland is not Ghana. The consumer behavior is different. The business context is different. But the mechanism transfers: consistent, personalized service builds loyalty, and digital tools make that consistency possible at scale. A barbershop that sends appointment reminders and follows up with clients who have not returned will retain more customers than one that does not.
 
-What is missing is a study that examines this specifically in Ghana. That gap is what motivated the research — and what I am building Buzzba to help close in practice.`
+What is missing is a study that examines this specifically in Ghana. That gap is what motivated the research, and what I am building Buzzba to help close in practice.`
                 }
             ],
             implications: `The research pointed at three non-negotiables for any tool that wants to actually get adopted in this market.
