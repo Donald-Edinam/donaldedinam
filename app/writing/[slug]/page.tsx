@@ -6,11 +6,13 @@ import { Metadata } from "next";
 import { DesignSystemIllustration } from "@/components/writing/DesignSystemIllustration";
 import { BoringInterfaceIllustration } from "@/components/writing/BoringInterfaceIllustration";
 import { ArchitectureStrategyIllustration } from "@/components/writing/ArchitectureStrategyIllustration";
+import { InfrastructureIllustration } from "@/components/writing/InfrastructureIllustration";
 
 const illustrationMap: Record<string, React.ComponentType> = {
     "design-systems-are-decisions": DesignSystemIllustration,
     "interfaces-should-feel-boring": BoringInterfaceIllustration,
     "frontend-architecture-is-product-strategy": ArchitectureStrategyIllustration,
+    "the-infrastructure-was-never-the-problem": InfrastructureIllustration,
 };
 
 interface WritingPageProps {
