@@ -15,6 +15,53 @@ const illustrationMap: Record<string, React.ComponentType> = {
     "the-infrastructure-was-never-the-problem": InfrastructureIllustration,
 };
 
+function parseTextWithLinks(text: string) {
+    if (!text) return null;
+    
+    const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const parts: (string | React.ReactNode)[] = [];
+    let lastIndex = 0;
+    let match;
+    
+    while ((match = regex.exec(text)) !== null) {
+        if (match.index > lastIndex) {
+            parts.push(text.substring(lastIndex, match.index));
+        }
+        
+        const linkText = match[1];
+        const linkUrl = match[2];
+        const isExternal = linkUrl.startsWith("http");
+        
+        if (isExternal) {
+            parts.push(
+                <a 
+                    key={match.index} 
+                    href={linkUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-accent hover:underline decoration-accent"
+                >
+                    {linkText}
+                </a>
+            );
+        } else {
+            parts.push(
+                <Link key={match.index} href={linkUrl} className="text-accent hover:underline decoration-accent">
+                    {linkText}
+                </Link>
+            );
+        }
+        
+        lastIndex = regex.lastIndex;
+    }
+    
+    if (lastIndex < text.length) {
+        parts.push(text.substring(lastIndex));
+    }
+    
+    return parts.length > 0 ? parts : text;
+}
+
 interface WritingPageProps {
     params: Promise<{
         slug: string;
@@ -92,7 +139,7 @@ export default async function WritingEntryPage({ params }: WritingPageProps) {
                     <section className="space-y-4">
                         <h2 className="text-xs font-bold uppercase tracking-wider text-text-muted">Context</h2>
                         <div className="text-text-primary leading-relaxed whitespace-pre-wrap">
-                            {entry.body.context}
+                            {parseTextWithLinks(entry.body.context)}
                         </div>
                     </section>
 
@@ -100,7 +147,7 @@ export default async function WritingEntryPage({ params }: WritingPageProps) {
                     <section className="space-y-4">
                         <h2 className="text-xs font-bold uppercase tracking-wider text-text-muted">Core Idea</h2>
                         <div className="text-xl text-text-primary font-medium leading-relaxed whitespace-pre-wrap">
-                            {entry.body.coreIdea}
+                            {parseTextWithLinks(entry.body.coreIdea)}
                         </div>
                     </section>
 
@@ -123,7 +170,7 @@ export default async function WritingEntryPage({ params }: WritingPageProps) {
                                 <div key={idx} className="space-y-3">
                                     {section.title && <h3 className="text-lg font-bold">{section.title}</h3>}
                                     <div className="text-text-primary leading-relaxed whitespace-pre-wrap">
-                                        {section.content}
+                                        {parseTextWithLinks(section.content)}
                                     </div>
                                 </div>
                             ))}
@@ -134,14 +181,14 @@ export default async function WritingEntryPage({ params }: WritingPageProps) {
                     <section className="space-y-4">
                         <h2 className="text-xs font-bold uppercase tracking-wider text-text-muted">Implications</h2>
                         <div className="text-text-primary leading-relaxed whitespace-pre-wrap">
-                            {entry.body.implications}
+                            {parseTextWithLinks(entry.body.implications)}
                         </div>
                     </section>
 
                     {/* Closing */}
                     <section className="mt-16 pt-8 border-t border-border-subtle">
                         <div className="text-text-primary leading-relaxed italic whitespace-pre-wrap">
-                            {entry.body.closing}
+                            {parseTextWithLinks(entry.body.closing)}
                         </div>
                     </section>
                 </div>

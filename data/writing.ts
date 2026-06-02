@@ -196,7 +196,7 @@ Here is what I found.`,
 
 That is not true.
 
-• GSMA (2024) reports 38.95 mobile connections in Ghana, representing 113% of the population. The number exceeds 100% because many people carry two SIMs.
+• [GSMA (2024)](https://datareportal.com/reports/digital-2024-ghana) reports 38.95 mobile connections in Ghana, representing 113% of the population. The number exceeds 100% because many people carry two SIMs.
 
 A barbershop owner in Accra almost certainly has a smartphone. Almost certainly uses WhatsApp. Almost certainly has mobile data. The hardware and connectivity prerequisite for digital tool adoption is not just present, it exceeds population size.
 
@@ -204,7 +204,7 @@ So the question is not whether the infrastructure exists. It does. The question 
                 },
                 {
                     title: 'The IFC called it a utilization gap. I think that is exactly right.',
-                    content: `The International Finance Corporation published a report in 2024 on digital opportunities in African businesses. The finding that stuck with me was this: firms have access to digital tools but are not using them in ways that actually transform how they operate.
+                    content: `The International Finance Corporation published a [report in 2024](https://www.ifc.org/en/insights-reports/2024/digital-opportunities-in-african-businesses) on digital opportunities in African businesses. The finding that stuck with me was this: firms have access to digital tools but are not using them in ways that actually transform how they operate.
 
 They called it a utilization gap.
 
@@ -214,7 +214,7 @@ The tools that exist were built for different businesses in different markets. T
                 },
                 {
                     title: 'Davis had the right theory. The context changes the weight.',
-                    content: `In 1989, Fred Davis published a paper that introduced the Technology Acceptance Model: the idea that people adopt technology primarily based on two things: whether they believe it will help them do their job better, and whether they believe it will be easy to use.
+                    content: `In 1989, Fred Davis published a paper that introduced the [Technology Acceptance Model](https://doi.org/10.2307/249008): the idea that people adopt technology primarily based on two things: whether they believe it will help them do their job better, and whether they believe it will be easy to use.
 
 The model has been cited thousands of times. It captures something true about human behavior.
 
@@ -224,7 +224,7 @@ My reading of the research suggests the core constructs hold. Perceived usefulne
                 },
                 {
                     title: 'When digital tools work, retention improves. That part is clear.',
-                    content: `Szwajca and Rydzewska published research in 2025 examining how digital customer service tools affect retention in Polish SMEs. They found a statistically significant positive relationship. Digital tools act as a mediating factor between service quality and customer retention.
+                    content: `[Szwajca and Rydzewska published research in 2025](https://doi.org/10.3390/su17031126) examining how digital customer service tools affect retention in Polish SMEs. They found a statistically significant positive relationship. Digital tools act as a mediating factor between service quality and customer retention.
 
 Poland is not Ghana. The consumer behavior is different. The business context is different. But the mechanism transfers: consistent, personalized service builds loyalty, and digital tools make that consistency possible at scale. A barbershop that sends appointment reminders and follows up with clients who have not returned will retain more customers than one that does not.
 
