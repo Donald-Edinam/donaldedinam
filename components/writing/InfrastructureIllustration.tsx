@@ -44,7 +44,7 @@ export function InfrastructureIllustration() {
                     {/* Network Toggle */}
                     <div className="flex flex-col gap-1.5">
                         <span className="text-[10px] uppercase font-bold text-text-muted tracking-wider">Network Connection</span>
-                        <div className="flex bg-bg-primary rounded p-0.5 border border-border-subtle">
+                        <div className="flex bg-bg rounded p-0.5 border border-border-subtle">
                             <button
                                 onClick={() => setNetwork("online")}
                                 className={`px-2.5 py-1 rounded transition-colors font-medium ${
@@ -67,7 +67,7 @@ export function InfrastructureIllustration() {
                     {/* Outreach toggle */}
                     <div className="flex flex-col gap-1.5">
                         <span className="text-[10px] uppercase font-bold text-text-muted tracking-wider">Outreach Channel</span>
-                        <div className="flex bg-bg-primary rounded p-0.5 border border-border-subtle">
+                        <div className="flex bg-bg rounded p-0.5 border border-border-subtle">
                             <button
                                 onClick={() => setChannel("email")}
                                 className={`px-2.5 py-1 rounded transition-colors font-medium ${
@@ -93,7 +93,7 @@ export function InfrastructureIllustration() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 
                 {/* 1. Legacy Enterprise SaaS Panel */}
-                <div className="border border-border-subtle rounded-lg bg-bg-primary p-4 flex flex-col relative overflow-hidden min-h-[360px]">
+                <div className="border border-border-subtle rounded-lg bg-bg p-4 flex flex-col relative overflow-hidden min-h-[360px]">
                     <div className="flex items-center justify-between mb-4 border-b border-border-subtle pb-2">
                         <span className="text-xs font-bold tracking-wider text-text-muted uppercase">Standard Enterprise SaaS</span>
                         <span className="text-[10px] px-2 py-0.5 rounded border border-red-500/20 text-red-500 bg-red-500/5 font-semibold">
@@ -103,7 +103,7 @@ export function InfrastructureIllustration() {
 
                     {/* Offline Block Mask */}
                     {network === "offline" && (
-                        <div className="absolute inset-0 bg-bg-primary/95 flex flex-col items-center justify-center p-6 text-center z-10 animate-fade-in">
+                        <div className="absolute inset-0 bg-bg flex flex-col items-center justify-center p-6 text-center z-10 animate-fade-in">
                             <svg className="w-8 h-8 text-red-500 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-3.536 5 5 0 011.414-3.536m0 0l2.829 2.829m-4.243 2.829L3 21M9.879 9.879a3 3 0 014.242 0M9.879 9.879l2.829 2.829" />
                             </svg>
@@ -130,7 +130,7 @@ export function InfrastructureIllustration() {
                                 <span>Service</span>
                                 <span>Outreach</span>
                             </div>
-                            <div className="p-1.5 space-y-1 bg-bg-primary text-text-muted">
+                            <div className="p-1.5 space-y-1 bg-bg text-text-muted">
                                 <div className="grid grid-cols-3 border-b border-border-subtle/30 pb-1">
                                     <span className="font-semibold text-text-primary">Kojo Mensah</span>
                                     <span>Skin Fade</span>
@@ -165,7 +165,7 @@ export function InfrastructureIllustration() {
                 </div>
 
                 {/* 2. Buzzba Context-Optimized Panel */}
-                <div className="border border-border-subtle rounded-lg bg-bg-primary p-4 flex flex-col relative overflow-hidden min-h-[360px]">
+                <div className="border border-border-subtle rounded-lg bg-bg p-4 flex flex-col relative overflow-hidden min-h-[360px]">
                     <div className="flex items-center justify-between mb-4 border-b border-border-subtle pb-2">
                         <span className="text-xs font-bold tracking-wider text-text-muted uppercase">Buzzba (Mobile-First)</span>
                         <span className="text-[10px] px-2 py-0.5 rounded border border-green-500/20 text-green-500 bg-green-500/5 font-semibold">
@@ -244,7 +244,7 @@ export function InfrastructureIllustration() {
             </div>
 
             {/* Interactive Insights Banner */}
-            <div className="mt-6 p-4 rounded-lg bg-bg-primary border border-border-subtle text-xs">
+            <div className="mt-6 p-4 rounded-lg bg-bg border border-border-subtle text-xs">
                 <h5 className="font-bold text-text-primary uppercase text-[10px] tracking-wider mb-2">
                     Simulator Findings
                 </h5>
