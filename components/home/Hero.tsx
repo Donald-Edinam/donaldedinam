@@ -2,8 +2,8 @@ import { Container } from "@/components/layout";
 
 export function Hero() {
     return (
-        <section className="section">
-            <Container size="content" className="animate-in fade-in slide-in-from-bottom-4 duration-1000 fill-mode-forwards">
+        <section className="section hero">
+            <Container size="content" data-gsap="stagger">
                 <h1 className="text-5xl font-bold mb-6 leading-tight max-w-[20ch]">
                     Frontend engineer designing <span className="text-accent">calm, scalable digital systems</span>.
                 </h1>

@@ -12,7 +12,7 @@ export function SelectedWork() {
                         A small set of projects that reflect how I think, not just what I can ship.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-gsap="stagger">
                     {projects.map((project) => (
                         <Link
                             key={project.id}

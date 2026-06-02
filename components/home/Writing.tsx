@@ -12,7 +12,7 @@ export function Writing() {
                         Notes on frontend systems, interface design, and building software with long-term intent.
                     </p>
                 </div>
-                <div className="space-y-6">
+                <div className="space-y-6" data-gsap="stagger">
                     {writingEntries.slice(0, 3).map((entry) => (
                         <Link
                             key={entry.id}

@@ -28,7 +28,7 @@ export default function WritingList({ entries }: WritingListProps) {
                 onSelect={setSelectedLens}
             />
 
-            <div className="space-y-0">
+            <div className="space-y-0" data-gsap="stagger">
                 {filteredEntries.map((entry) => (
                     <WritingCard key={entry.id} entry={entry} />
                 ))}

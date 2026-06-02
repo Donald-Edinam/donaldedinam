@@ -23,7 +23,7 @@ export default function WorkPage() {
                     </p>
                 </header>
 
-                <div className="space-y-4">
+                <div className="space-y-4" data-gsap="stagger">
                     {projects.map((project) => (
                         <ProjectCard key={project.id} project={project} />
                     ))}
