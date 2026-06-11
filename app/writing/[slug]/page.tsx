@@ -7,12 +7,14 @@ import { DesignSystemIllustration } from "@/components/writing/DesignSystemIllus
 import { BoringInterfaceIllustration } from "@/components/writing/BoringInterfaceIllustration";
 import { ArchitectureStrategyIllustration } from "@/components/writing/ArchitectureStrategyIllustration";
 import { InfrastructureIllustration } from "@/components/writing/InfrastructureIllustration";
+import { MilestoneLifecycleIllustration } from "@/components/writing/MilestoneLifecycleIllustration";
 
 const illustrationMap: Record<string, React.ComponentType> = {
     "design-systems-are-decisions": DesignSystemIllustration,
     "interfaces-should-feel-boring": BoringInterfaceIllustration,
     "frontend-architecture-is-product-strategy": ArchitectureStrategyIllustration,
     "the-infrastructure-was-never-the-problem": InfrastructureIllustration,
+    "the-unit-of-work-in-ai-assisted-development-is-the-decision": MilestoneLifecycleIllustration,
 };
 
 function parseTextWithLinks(text: string) {

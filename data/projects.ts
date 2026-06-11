@@ -21,6 +21,7 @@ export interface Project {
         alt: string;
     }[];
     liveUrl?: string;
+    liveLabel?: string;
     publishedAt: string;
 }
 
@@ -52,10 +53,11 @@ export const projects: Project[] = [
         title: "Buzzba Find",
         tagline: "Ghana-first barber discovery and booking platform.",
         liveUrl: "https://find.buzzba.com",
+        liveLabel: "Visit Waitlist",
         publishedAt: "2026-06-01",
         meta: {
             role: "Founder, Fullstack Developer",
-            timeline: "2026 – In development",
+            timeline: "2026 - In development",
             stack: ["NestJS", "Next.js", "PostgreSQL", "TypeScript"],
         },
         content: {
@@ -69,7 +71,7 @@ Find exists because the existing booking platforms in Ghana model the barber as 
             role: `I'm the solo founder and the only engineer. Every architectural decision, every line of code, every product call is mine to make and live with.
 
 The constraint that shaped everything: Find had to be buildable alongside Buzzba Core, the existing B2B barbershop management product, without disrupting it. Two products, one founder, one ecosystem.`,
-            approach: `The first real decision was structural. Find and Core look like they should share infrastructure — same domain, same database, same backend. They serve the same industry. They share a brand.
+            approach: `The first real decision was structural. Find and Core look like they should share infrastructure: same domain, same database, same backend. They serve the same industry. They share a brand.
 
 But Find's primary users are freelance and mobile barbers, who have no relationship to Core's shop-centric data model. Core's schema enforces a hard invariant: one barber, one shop, one business. That invariant is threaded through sales tracking, availability computation, booking logic, and the public directory. Forcing shopless barbers into that model would have produced workarounds in every feature.
 
@@ -77,22 +79,24 @@ So Find and Core are separate systems. Separate backends, separate databases, se
 
 The second decision was sequencing. Rather than build the full marketplace and launch all at once, the work is decomposed into phases with explicit definitions of done. Phase 0 establishes foundations: waitlist infrastructure, external integrations, the NestJS skeleton. Phase 1 builds the marketplace mechanic itself. Phases 2 through 4 build the surfaces. Phase 5 connects to Core. Each phase ships independently.
 
-This sequencing exists because solo-founder velocity is the binding constraint. AI coding agents handle the implementation; my time goes to decisions and review. Phases keep the decision load bounded — I'm only thinking about one set of problems at a time.`,
+This sequencing exists because solo-founder velocity is the binding constraint. AI coding agents handle the implementation; my time goes to decisions and review. Phases keep the decision load bounded, and I'm only thinking about one set of problems at a time.`,
             solutions: `NestJS for the Find backend, despite Core using plain Express. The pattern divergence is accepted because Find will grow into a larger API surface than Core, and NestJS's module system scales the codebase without requiring architectural discipline at every commit.
 
-One account per phone number is the planned identity model. Roles — client, barber, both — are attributes on a single identity rather than separate accounts. This matches the Ghanaian context where phone is universal and WhatsApp is the primary communication channel.
+One account per phone number is the planned identity model. Roles such as client, barber, or both are attributes on a single identity rather than separate accounts. This matches the Ghanaian context where phone is universal and WhatsApp is the primary communication channel.
 
-No free tier for barbers is the planned monetization model. A 7-day trial, then a choice between flat subscription or per-booking commission. The hybrid model self-segments the market: high-volume barbers prefer the flat rate, new barbers prefer pay-per-booking.
+No free tier for barbers is the planned monetization model. A 7-day trial, then a choice between flat subscription or per-booking commission. The hybrid model self-segments the market: high-volume barbers prefer the flat rate, new barbers prefer pay-per-booking. Neither option dilutes the brand with free riders.
 
-Four-gate verification for barbers is the designed trust system. Account creation, profile publication, behavioral verification, and formal ID verification as a progressive ladder. Star ratings alone don't carry enough trust for an industry where a bad cut is two weeks of looking unfresh.`,
+Four-gate verification for barbers is the designed trust system. Account creation, profile publication, behavioral verification, and formal ID verification as a progressive ladder. Star ratings alone don't carry enough trust for an industry where a bad cut is two weeks of looking unfresh.
+
+Canonical planning documents written before the code. PRD, engineering roadmap, milestone prompts. The artifacts cost time upfront but every downstream decision references them instead of being re-derived.`,
             outcomes: `The waitlist is live at find.buzzba.com. The dedicated Find backend is running with its own database, its own API, and the waitlist endpoint serving real submissions with email and SMS confirmations. The migration from Core's backend to standalone Find infrastructure is complete.
 
-What's working: the two-system architecture has held up under the first real test. Find ships independently of Core. Decisions in one system don't leak into the other. The NestJS module structure has already paid for itself — adding the admin dashboard, notifications, and waitlist features was additive, not surgical.
+What's working: the two-system architecture has held up under the first real test. Find ships independently of Core. Decisions in one system don't leak into the other. The NestJS module structure has already paid for itself; adding the admin dashboard, notifications, and waitlist features was additive, not surgical.
 
-What's still unproven: the marketplace mechanic itself. The waitlist is collecting signal on demand and user type distribution, but bookings haven't happened yet. The trial conversion rate, the four-gate verification operational load, the subscription versus commission split — these become real numbers only after launch.`,
+What's still unproven: the marketplace mechanic itself. The waitlist is collecting signal on demand and user type distribution, but bookings haven't happened yet. The trial conversion rate, the four-gate verification operational load, the subscription versus commission split become real numbers only after launch.`,
             reflection: `The most useful lesson so far is about planning artifacts as leverage. A solo founder working with AI coding agents has a different bottleneck than a small team. The team's bottleneck is communication. The solo founder's bottleneck is decision-making.
 
-Canonical documents — PRD, roadmap, milestone prompts — are how I move that bottleneck. Each artifact is a decision that doesn't have to be made again. The code becomes execution, not design.
+Canonical documents like PRD, roadmap, and milestone prompts are how I move that bottleneck. Each artifact is a decision that doesn't have to be made again. The code becomes execution, not design.
 
 The architectural decision to split Find from Core was the highest-leverage call. It's also the kind of decision that's invisible when it works. Nobody notices that two systems didn't get tangled together. They only notice when they do.`
         }

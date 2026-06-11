@@ -66,6 +66,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 title={project.title}
                 tagline={project.tagline}
                 liveUrl={project.liveUrl}
+                liveLabel={project.liveLabel}
                 meta={{
                     role: project.meta.role,
                     timeline: project.meta.timeline

@@ -246,5 +246,87 @@ There are thousands of barbershops, laundry services, and tailoring shops in Acc
 
 I am building that. The research told me I am building it for the right reasons. The next step is the evidence to guide exactly how.`
         }
+    },
+    {
+        id: '6',
+        slug: 'the-unit-of-work-in-ai-assisted-development-is-the-decision',
+        title: 'The unit of work in AI-assisted development is the decision, not the line of code',
+        lens: 'Engineering Practice',
+        readingTime: 7,
+        year: 2026,
+        publishedAt: '2026-06-11',
+        excerpt: 'Most discourse about AI coding agents treats them as code-generation machines. But when implementation becomes cheap, the bottleneck moves to the decisions that precede the code.',
+        body: {
+            context: `Most discourse about AI coding agents treats them as code-generation machines. The question becomes how to get them to write better code, faster, with fewer errors.
+
+This framing misses what actually changed.
+
+When implementation becomes cheap, the bottleneck moves elsewhere. It moves to the decisions that precede the code. What to build, in what order, with what boundaries, against what acceptance criteria.
+
+The engineer using AI agents seriously is not a faster typist. They are a denser decision-maker.
+
+There is a quieter problem underneath this. Most people treat AI agents as magicians. Drop in a vague prompt, expect exceptional output, repeat until something works. But AI agents are still computer systems. The same principles that have always governed computer systems still apply. Garbage in, garbage out. Decomposition before execution. The agent does not transcend computer science. It runs on it.`,
+            coreIdea: `Every line of code encodes a decision someone made.
+
+In traditional development, the engineer makes the decision and writes the code in the same motion. The act of writing is also the act of deciding. The two are fused.
+
+AI agents separate them. The agent writes the code; the engineer decides what code to write. This sounds trivial. It isn't.
+
+The implication is that the work of the engineer shifts from writing to specifying. From typing to thinking. From execution to direction.
+
+If you measure productivity by lines per hour, AI-assisted development looks like a multiplier. If you measure it by decisions per hour, it looks like the opposite. The decision rate is the new ceiling.`,
+            breakdown: [
+                {
+                    title: 'The Code Generation Failure Mode',
+                    content: `Treating AI-assisted development as code generation produces a recognizable failure mode.
+
+The engineer writes a vague prompt. "Build the booking module." The agent generates something. The engineer reviews, finds problems, sends a follow-up. The agent fixes some, breaks others. After three or four rounds, the work is done but the engineer cannot explain what they shipped. The codebase grows opaque to the person who built it.
+
+I learned this the way most people learn it: by trying the alternative first. Early on, I would write a long prompt describing an entire feature and hand it to the agent in one shot. The output looked impressive at first scan. The problems surfaced later — edge cases unhandled, conventions silently violated, assumptions baked in that conflicted with the rest of the codebase. Each round of fixes introduced new divergences. The work technically shipped, but the system underneath was incoherent.
+
+This happens because there were no decisions made before the code was written. The engineer outsourced the decisions to the agent's defaults. The agent made reasonable choices, but reasonable choices accumulated without intent produce a system that works by accident.`
+                },
+                {
+                    title: 'Decomposition and Computational Thinking',
+                    content: `The alternative is to encode the decisions explicitly, before code is written.
+
+The framework is not new. Computational thinking, taught as one of the four foundational components of computer science alongside pattern recognition, abstraction, and algorithm design, has always advocated for decomposition as the first move on any complex problem. Break the problem into smaller sub-problems. Solve each in isolation. Compose the solutions back together. What changed with AI agents is not the principle. It is who executes the sub-problems. The engineer still decomposes. The agent now implements.`
+                },
+                {
+                    title: 'Milestone-Based Prompting',
+                    content: `I work through what I call milestone-based prompting. Each milestone is a self-contained brief that encodes a single decision unit. Scope small enough to verify by eye, usually one to four files. Explicit acceptance criteria. Named dependencies on prior milestones. A clear handoff to the next milestone.
+
+The structure is the same every time, five interconnected sections:
+
+Context loaded once per session through a project brief that establishes architecture decisions, conventions, and the current build state. This sits at the top of the session, anchoring everything that follows.
+
+Then for each milestone in sequence: prerequisites that name what must be true before starting, the prompt itself encoding the work to be done, acceptance criteria defining what done looks like, gotchas surfacing what could go wrong, and a pointer to the next milestone.
+
+Each section feeds the next. The context grounds the prompt. The prerequisites prevent skipped foundations. The acceptance criteria gate progression. The gotchas are the lessons that compound across milestones.
+
+When this works, something interesting happens. The agent, given a bounded scope and clear acceptance criteria, often catches edge cases and implementation details I missed. The decomposition does not just reduce the risk of bad output. It creates a focused surface where the agent's pattern-matching can act as a second pair of eyes on the work I already specified.
+
+When it does not work, the response is targeted, not catastrophic. A small follow-up prompt addressing the specific divergence from project goals. Not a restart. Not a new session. The agent corrects against the same context that produced the original output. The cost of an iteration is bounded.
+
+Each milestone is a commit. The commit message names the milestone. The git history becomes a narrative of decisions, not a stream of changes.`
+                }
+            ],
+            implications: `The role of the engineer in AI-assisted development looks more like a conductor than a typist.
+
+A conductor does not play the instruments. A conductor decides what is played, in what order, at what tempo, with what dynamics. The musicians execute. The work of the conductor is invisible to anyone watching only the instruments.
+
+This reframes several things.
+
+The skill that compounds is not prompting technique. It is decomposition. The engineer who can break a complex feature into ten clean milestones outperforms the engineer who writes excellent prompts for vague work units. Decomposition is the leverage.
+
+Planning artifacts become operational, not bureaucratic. A PRD is no longer a document that gets written and ignored. It is a reference that the agent reads, that the engineer cites, that the next milestone depends on. The artifact does work in the system.
+
+Failure modes change. The traditional failure mode is bugs in code. The new failure mode is bugs in decisions — choosing the wrong architecture, scoping a milestone too broadly, omitting an acceptance criterion. These failures are more expensive because they propagate through the system before showing up as code problems.
+
+The pace of work changes. Implementation is not the slow step anymore. Decision-making is. Working at the right pace means giving each decision the time it actually needs, not the time the code would have taken.`,
+            closing: `Most importantly: the engineer remains responsible for the system. The agent did not build it. The engineer specified it, the agent executed it, and the engineer verified it. The decisions belong to the human. The code belongs to the human. The system belongs to the human.
+
+That responsibility is the whole job. Everything else can be delegated.`
+        }
     }
 ];

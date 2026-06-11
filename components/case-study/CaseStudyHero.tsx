@@ -7,13 +7,14 @@ interface CaseStudyHeroProps {
     title: string;
     tagline: string;
     liveUrl?: string;
+    liveLabel?: string;
     meta: {
         role: string;
         timeline: string;
     };
 }
 
-export function CaseStudyHero({ title, tagline, liveUrl, meta }: CaseStudyHeroProps) {
+export function CaseStudyHero({ title, tagline, liveUrl, liveLabel = "Visit Live Site", meta }: CaseStudyHeroProps) {
     return (
         <motion.section
             initial={{ opacity: 0, y: 20 }}
@@ -44,7 +45,7 @@ export function CaseStudyHero({ title, tagline, liveUrl, meta }: CaseStudyHeroPr
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center text-accent hover:text-accent-hover font-medium transition-colors border-b border-transparent hover:border-accent"
                             >
-                                Visit Live Site
+                                {liveLabel}
                                 <span className="ml-1">↗</span>
                             </a>
                         )}
