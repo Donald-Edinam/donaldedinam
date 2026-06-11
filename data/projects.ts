@@ -30,11 +30,11 @@ export const projects: Project[] = [
         slug: "buzzba-core",
         title: "Buzzba Core",
         tagline: "Comprehensive barbershop management system.",
-        liveUrl: "https://www.buzzba.com",
+        liveUrl: "https://core.buzzba.com",
         publishedAt: "2024-06-15",
         meta: {
             role: "Fullstack Developer",
-            timeline: "2024",
+            timeline: "2025",
             stack: ["Next.js", "Express.js", "PostgreSQL"],
         },
         content: {
